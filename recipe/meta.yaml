@@ -8,18 +8,19 @@ source:
   md5: 4f7d8126d7367c239fd67615680990e3
 
 build:
-  number: 2          [linux]
-  number: 1          [win]
+  number: 3          [linux]
+  number: 2          [win]
   detect_binary_files_with_prefix: True
 
 requirements:
   build:
     - python
-    - mpich2         [linux]
+    - '{{ compiler("c") }}'
+    - mpich         [linux]
     - openmpi        [osx]
   run:
     - python
-    - mpich2         [linux]
+    - mpich         [linux]
     - openmpi        [osx]
 
 test:
